@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/fl_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primaryDarkColor"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_item_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/spn_item_menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Consumo médio mensal de energia elétrica:" />
+            </FrameLayout>
+
+            <Spinner
+                android:id="@+id/spn_item_menu"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:spinnerMode="dialog"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_type"
+                app:layout_constraintEnd_toStartOf="@+id/et_item_text"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@+id/fl_item_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_type"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fl_item_title"
+                app:layout_constraintTop_toBottomOf="@+id/fl_item_title"
+                tools:text="@string/item_menu_with_text_energy_by_month" />
+
+            <EditText
+                android:id="@+id/et_item_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:gravity="end|center"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="8dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fl_item_title"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@+id/spn_item_menu"
+                app:layout_constraintTop_toBottomOf="@+id/fl_item_title"
+                android:text="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

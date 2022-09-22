@@ -1,0 +1,9 @@
+package com.example.ratepco2
+
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class RatepCO2Application: Application() {
+    val authHeaderToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiM2VmYmFkYjljYjY1YmFhYTFkMTA0Y2M4NWUzNTc1N2E1OWU3ZGRkODdiMjcxNTk5ZTRhY2ZjMDk4ZjkwNDhkYzBjZjdiZDRiMTc2ZmJiYTUiLCJpYXQiOjE2NjE1MTk5MTksIm5iZiI6MTY2MTUxOTkxOSwiZXhwIjoxNjkzMDU1OTE5LCJzdWIiOiIxMzY0Iiwic2NvcGVzIjpbXX0.PPz4NmLY6X21ik27wPclXaqotvd1eG61hbVqmXkbEPGBzrme6dQJqi6K_g7Y2D_04Vh7bdhpzXT7a5r8U6BirA"
+}

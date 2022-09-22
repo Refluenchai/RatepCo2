@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RatepCo2</string>
+
+    <!--Main-->
+    <string name="main_partial_result">RESULTADO PARCIAL:</string>
+
+    <!--ItemMenuWithText-->
+    <string name="item_menu_with_text_energy_by_month">KWh/mês</string>
+    <string name="item_menu_with_text_cylinders_by_month">Botijões/mês</string>
+
+
+    <string name="item_menu_with_text_car">Carro</string>
+    <string name="item_menu_with_text_motorcycle">Moto</string>
+    <string name="item_menu_with_text_bike">Bicicleta</string>
+    <string name="item_menu_with_text_electric_bike">Bicicleta elétrica</string>
+    <string name="item_menu_with_text_bus">Ónibus</string>
+    <string name="item_menu_with_text_train">Trem</string>
+    <string name="item_menu_with_text_taxi">Táxi</string>
+
+    <string name="item_menu_with_text_gasoline">Gasolina</string>
+    <string name="item_menu_with_text_ethanol">Etanol</string>
+    <string name="item_menu_with_text_electric">Elétrico</string>
+    <string name="item_menu_with_text_hybrid">Híbrido</string>
+    <string name="item_menu_with_text_gnv">GNV</string>
+
+    <string name="item_menu_with_text_engine_car_1">1.0 a 1.5</string>
+    <string name="item_menu_with_text_engine_car_2">1.6 a 2.0</string>
+    <string name="item_menu_with_text_engine_car_3">Maior que 2.0</string>
+    <string name="item_menu_with_text_engine_motorcycle_1">0 a 125cc</string>
+    <string name="item_menu_with_text_engine_motorcycle_2">126 a 250cc</string>
+    <string name="item_menu_with_text_engine_motorcycle_3">Maior que 251cc</string>
+
+    <string name="item_menu_with_text_total_km_month">Total de quilómetros mensais</string>
+
+    <!--WhatIsIt-->
+    <string name="what_is_it_start_calculator">Iniciar Calculadora</string>
+    <string name="what_is_it_title">O que é isso?</string>
+    <string name="what_is_it_description">As atividades cotidianas emitem, direta ou indiretamente,
+        gases que causam as mudanças climáticas. Use a calculadora para descobrir sua pegada de
+        carbono e quantas árvores você precisa plantar para compensar essas emissões!</string>
+
+    <!--House-->
+    <string name="house_title">Casa</string>
+    <string name="house_description">Preencha os dados relativos ao seu consumo de energia e gás.
+         É importante sabermos quantas pessoas moram com você para que a emissão seja dividida
+         entre os moradores.</string>
+    <string name="house_energy_title">Consumo médio mensal de eletricidade:</string>
+    <string name="house_gas_title">Consumo médio mensal de gás:</string>
+    <string name="house_people_title">Quantas pessoas moram na sua casa (incluindo você)?</string>
+
+    <!--GroundTransportation-->
+    <string name="ground_transportation_title">Transporte Terrestre</string>
+    <string name="ground_transportation_description">O modo como você se desloca impacta no meio
+        ambiente. Abaixo, indique quais são seus principais meios de locomoção individual.</string>
+    <string name="ground_transportation_vehicle">Veículo</string>
+    <string name="ground_transportation_vehicle_type">Tipo de veículo</string>
+    <string name="ground_transportation_emission">Emissão (kg CO²e)</string>
+    <string name="ground_transportation_type_title">Qual é o tipo de transporte que você
+        usa?</string>
+    <string name="ground_transportation_fuel_type_title">Qual o combustivel que você usa?</string>
+    <string name="ground_transportation_engine_type_title">Qual é o motor?</string>
+    <string name="ground_transportation_add_transport">Adcionar Transporte</string>
+    <string name="ground_transportation_hint">Aqui serão listados os seus transportes assim que você
+        adciona-los.</string>
+
+    <!--AirTravel-->
+    <string name="air_travel_title">Viagens aéreas</string>
+    <string name="air_travel_description">Este tipo de transporte tende a ter um alto impacto na
+        termos de emissões de carbono. Portanto, esta é uma boa oportunidade para compensar as
+        suas próximas férias. Aqui você contará as viagens que fez nos últimos 12 meses.</string>
+    <string name="air_travel_departure_title">Partida</string>
+    <string name="air_travel_arrival_title">Chegada</string>
+    <string name="air_travel_type_of_trip_title">Tipos de viagem</string>
+    <string name="air_travel_number_of_trips_title">Número de viagens</string>
+    <string name="air_travel_one_way">Somente ida</string>
+    <string name="air_travel_round_trip">Ida e volta</string>
+
+    <!--Diet-->
+    <string name="diet_title">Dieta</string>
+    <string name="diet_type_of_diet_title">Tipo de dieta</string>
+    <string name="diet_beef">Maioria carne bovína.</string>
+    <string name="diet_chicken">Maioria carne de ave.</string>
+    <string name="diet_pork">Maioria carne suína.</string>
+    <string name="diet_three_meats">Os três tipos de carne balanceados.</string>
+    <string name="diet_sporadically_meat">Eu como carne esporadicamente.</string>
+    <string name="diet_vegan">Eu não como carne.</string>
+
+    <!--Result-->
+    <string name="result_title">Resultado</string>
+    <string name="result_tons_co2_label">Toneladas de CO²</string>
+    <string name="result_needed_tree_label">Árvores necessárias para compensar.</string>
+    <string name="diet_description">O que você come também contribui para sua Pegada de Carbono.
+        Na cadeia de suprimentos, os alimentos emitem carbono em todas as etapas. A carne vermelha
+        tem um impacto ainda mais significativo.</string>
+</resources>

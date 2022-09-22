@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">RatepCo2</string>
+
+    <!--Main-->
+    <string name="main_partial_result">PARTIAL RESULT:</string>
+
+    <!--ItemMenuWithText-->
+    <string name="item_menu_with_text_energy_by_month">KWh/month:</string>
+    <string name="item_menu_with_text_cylinders_by_month">Cylinders/month</string>
+
+    <string name="item_menu_with_text_car">Car</string>
+    <string name="item_menu_with_text_motorcycle">Motorcycle</string>
+    <string name="item_menu_with_text_bike">Bike</string>
+    <string name="item_menu_with_text_electric_bike">Electric Bike</string>
+    <string name="item_menu_with_text_bus">Bus</string>
+    <string name="item_menu_with_text_train">Train</string>
+    <string name="item_menu_with_text_taxi">Taxi</string>
+
+    <string name="item_menu_with_text_gasoline">Gasoline</string>
+    <string name="item_menu_with_text_ethanol">Ethanol</string>
+    <string name="item_menu_with_text_electric">Electric</string>
+    <string name="item_menu_with_text_hybrid">Hybrid</string>
+    <string name="item_menu_with_text_gnv">VNG</string>
+
+    <string name="item_menu_with_text_engine_car_1">1.0 to 1.5</string>
+    <string name="item_menu_with_text_engine_car_2">1.6 to 2.0</string>
+    <string name="item_menu_with_text_engine_car_3">Greater than 2.0</string>
+
+    <string name="item_menu_with_text_engine_motorcycle_1">0 to 125cc</string>
+    <string name="item_menu_with_text_engine_motorcycle_2">126 to 250cc</string>
+    <string name="item_menu_with_text_engine_motorcycle_3">Greater than 251cc</string>
+
+    <string name="item_menu_with_text_total_km_month">Total monthly kilometers</string>
+
+    <string-array name="transport_type">
+        <item>@string/item_menu_with_text_car</item>
+        <item>@string/item_menu_with_text_motorcycle</item>
+        <item>@string/item_menu_with_text_bike</item>
+        <item>@string/item_menu_with_text_electric_bike</item>
+        <item>@string/item_menu_with_text_bus</item>
+        <item>@string/item_menu_with_text_train</item>
+        <item>@string/item_menu_with_text_taxi</item>
+    </string-array>
+
+    <string-array name="fuel_type">
+        <item>@string/item_menu_with_text_gasoline</item>
+        <item>@string/item_menu_with_text_ethanol</item>
+    </string-array>
+
+    <string-array name="car_engine_type">
+        <item>@string/item_menu_with_text_engine_car_1</item>
+        <item>@string/item_menu_with_text_engine_car_2</item>
+        <item>@string/item_menu_with_text_engine_car_3</item>
+    </string-array>
+
+    <string-array name="motorcycle_engine_type">
+        <item>@string/item_menu_with_text_engine_motorcycle_1</item>
+        <item>@string/item_menu_with_text_engine_motorcycle_1</item>
+        <item>@string/item_menu_with_text_engine_motorcycle_1</item>
+    </string-array>
+
+    <!--WhatIsIt-->
+    <string name="what_is_it_title">What is it?</string>
+    <string name="what_is_it_description">Everyday activities emit, directly or indirectly,
+        gases that cause climate change. Use the calculator to find out your carbon footprint
+        and how many trees you need to plant to offset those emissions!</string>
+    <string name="what_is_it_start_calculator">Start Calculator</string>
+
+    <!--House-->
+    <string name="house_title">House</string>
+    <string name="house_description">Fill in the data related to your energy and gas consumption.
+        It is important that we know how many people live with you so that this issue is shared
+        among the residents.</string>
+    <string name="house_energy_title">Average monthly consumption of electricity:</string>
+    <string name="house_gas_title">Average monthly gas consumption:</string>
+    <string name="house_people_title">How many people live in your house (including you)?</string>
+
+    <!--GroundTransportation-->
+    <string name="ground_transportation_title">Ground Transportation</string>
+    <string name="ground_transportation_description">Public transport also impacts the environment.
+        When we use this service, we have our share of emissions from each modality.</string>
+    <string name="ground_transportation_vehicle">Vehicle</string>
+    <string name="ground_transportation_vehicle_type">Vehicle Type</string>
+    <string name="ground_transportation_emission">Emission (kg CO²e)</string>
+    <string name="ground_transportation_hint">Here will be list your transports after you add them.</string>
+    <string name="ground_transportation_type_title">What is the type of transport you use?</string>
+    <string name="ground_transportation_fuel_type_title">What is the fuel you use?</string>
+    <string name="ground_transportation_engine_type_title">What is the engine?</string>
+    <string name="ground_transportation_add_transport">Add Transport</string>
+
+    <!--AirTravel-->
+    <string name="air_travel_title">Air travel</string>
+    <string name="air_travel_description">This type of transport tends to have a high impact in
+        terms of carbon emissions. So, this is a good chance to make up for your next vacation.
+        Here you will count the trips you have taken in the last 12 months.</string>
+    <string name="air_travel_departure_title">Departure</string>
+    <string name="air_travel_arrival_title">Arrival</string>
+    <string name="air_travel_type_of_trip_title">Type of trip</string>
+    <string name="air_travel_number_of_trips_title">Number of trips</string>
+    <string name="air_travel_one_way">One Way</string>
+    <string name="air_travel_round_trip">Round Trip</string>
+
+    <string-array name="type_of_trip">
+        <item>@string/air_travel_one_way</item>
+        <item>@string/air_travel_round_trip</item>
+    </string-array>
+
+    <!--Diet-->
+    <string name="diet_title">Diet</string>
+    <string name="diet_description">What you eat also contributes to your Carbon Footprint. In the supply chain, food emits carbon at all stages. Red meat has an even more significant impact.</string>
+    <string name="diet_type_of_diet_title">Type of diet</string>
+    <string name="diet_beef">Beef most of the time.</string>
+    <string name="diet_chicken">Chicken most of the time.</string>
+    <string name="diet_pork">Pork most of the time.</string>
+    <string name="diet_three_meats">The 3 types of meat in a balanced way.</string>
+    <string name="diet_sporadically_meat">I eat meat only sporadically.</string>
+    <string name="diet_vegan">I don\'t eat meat</string>
+
+    <string-array name="type_of_diet">
+        <item>@string/diet_beef</item>
+        <item>@string/diet_chicken</item>
+        <item>@string/diet_pork</item>
+        <item>@string/diet_three_meats</item>
+        <item>@string/diet_sporadically_meat</item>
+        <item>@string/diet_vegan</item>
+    </string-array>
+
+    <!--Result-->
+    <string name="result_title">Result</string>
+    <string name="result_tons_co2_label">Tons of CO²</string>
+    <string name="result_needed_tree_label">Trees needed for compensation</string>
+
+</resources>

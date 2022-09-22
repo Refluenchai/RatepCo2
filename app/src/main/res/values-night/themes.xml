@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RatepCo2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="android:statusBarColor">@color/primaryDarkColor</item>
+    </style>
+
+    <!--SplashScreen-->
+    <style name="Theme.SplashTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primaryDarkColor</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.RatepCo2</item>
+        <item name="statusBarForeground">@color/primaryTextColor</item>
+    </style>
+</resources>

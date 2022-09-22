@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/inc_transport_type"
+        layout="@layout/item_menu_with_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/inc_km_month"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <include
+        android:id="@+id/inc_km_month"
+        layout="@layout/item_menu_with_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_transport"
+        app:layout_constraintTop_toBottomOf="@+id/inc_transport_type"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_transport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/primaryColor"
+        android:paddingHorizontal="16dp"
+        android:text="@string/ground_transportation_add_transport"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inc_km_month" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
