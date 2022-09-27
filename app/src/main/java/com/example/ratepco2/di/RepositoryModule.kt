@@ -21,4 +21,10 @@ interface RepositoryModule {
 
     @Binds
     fun bindPublicTransitRepository(publicTransitRepository: PublicTransitRepositoryImpl): PublicTransitRepository
+
+    @Binds
+    fun bindFlightRepository(flightCarbonRepository: FlightCarbonRepositoryImpl): FlightCarbonRepository
+
+    @Binds
+    fun bindTreeRepository(treeCarbonRepository: TreeCarbonRepositoryImpl): TreeCarbonRepository
 }

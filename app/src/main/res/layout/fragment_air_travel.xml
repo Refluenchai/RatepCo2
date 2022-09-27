@@ -7,36 +7,12 @@
     tools:context=".presentation.fragment.AirTravelFragment">
 
     <include
-        android:id="@+id/inc_departure"
+        android:id="@+id/inc_km_month"
         layout="@layout/item_menu_with_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <include
-        android:id="@+id/inc_arrival"
-        layout="@layout/item_menu_with_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/inc_departure"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <include
-        android:id="@+id/inc_type_of_trip"
-        layout="@layout/item_menu_with_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/inc_arrival"
-        tools:layout_editor_absoluteX="27dp" />
-
-    <include
-        android:id="@+id/inc_number_of_trips"
-        layout="@layout/item_menu_with_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/inc_type_of_trip"
-        tools:layout_editor_absoluteX="27dp" />
+        tools:layout_editor_absoluteX="-16dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_next"
@@ -44,12 +20,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:backgroundTint="@color/primaryColor"
         android:padding="10dp"
         android:src="@drawable/ic_next"
-        app:tint="@color/white"
+        app:backgroundTint="@color/primaryColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+        app:tint="@color/white"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

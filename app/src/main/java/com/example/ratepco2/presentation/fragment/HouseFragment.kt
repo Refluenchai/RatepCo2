@@ -19,6 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HouseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
+    private var peopleQtt: Int = 0
+    private var gasEmission: Double = 0.0
+    private var energyEmission: Double = 0.0
     private lateinit var binding: FragmentHouseBinding
     private lateinit var activity: MainActivity
     private val viewModel: HouseViewModel? by viewModels()
@@ -45,11 +48,13 @@ class HouseFragment : Fragment(), AdapterView.OnItemSelectedListener {
             fabNext.setOnClickListener { nextEvent() }
             incEnergy.etItemText.run {
                 this.addTextChangedListener(ETWatcher(this, viewModel) {
+                    activity.subtractEmission(energyEmission)
                     (it as HouseViewModel).getEnergyCarbonEquivalent(this.text.toString().toDouble())
                 })
             }
             incGas.etItemText.run {
                 this.addTextChangedListener(ETWatcher(this, viewModel) {
+                    activity.subtractEmission(gasEmission)
                     (it as HouseViewModel).getGasCarbonEquivalent(this.text.toString().toInt())
                 })
             }
@@ -59,10 +64,12 @@ class HouseFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private fun setObservers() {
         viewModel?.energyCarbonEquivalentLiveData?.observe(viewLifecycleOwner) { energyEmission ->
+            this.energyEmission = energyEmission
             activity.addEmission(energyEmission)
         }
 
         viewModel?.gasCarbonEquivalentLiveData?.observe(viewLifecycleOwner) { gasEmission ->
+            this.gasEmission = gasEmission
             activity.addEmission(gasEmission)
         }
     }
@@ -95,6 +102,7 @@ class HouseFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
                 arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
             )
+            this@HouseFragment.peopleQtt = incPeople.spnItemMenu.selectedItemPosition
         }
     }
 
@@ -106,7 +114,9 @@ class HouseFragment : Fragment(), AdapterView.OnItemSelectedListener {
     )
 
     override fun onItemSelected(parent: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
-        activity.divideEmission(parent?.getItemAtPosition(position).toString().toInt())
+        activity.multiplyEmission(this.peopleQtt)
+        this.peopleQtt = parent?.getItemAtPosition(position).toString().toInt()
+        activity.divideEmission(this.peopleQtt)
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {

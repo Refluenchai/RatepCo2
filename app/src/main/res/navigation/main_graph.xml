@@ -54,19 +54,10 @@
         android:label=""
         tools:layout="@layout/fragment_air_travel" >
         <action
-            android:id="@+id/action_airTravelFragment_to_dietFragment"
-            app:destination="@id/dietFragment" />
-    </fragment>
-    <!--Diet-->
-    <fragment
-        android:id="@+id/dietFragment"
-        android:name="com.example.ratepco2.presentation.fragment.DietFragment"
-        android:label=""
-        tools:layout="@layout/fragment_diet" >
-        <action
-            android:id="@+id/action_dietFragment_to_resultFragment"
+            android:id="@+id/action_airTravelFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
     </fragment>
+    <!--Diet-->
     <!--Result-->
     <fragment
         android:id="@+id/resultFragment"

@@ -100,7 +100,19 @@ class MainActivity : AppCompatActivity() {
         binding.tvPartialResult.text = partial.toString()
     }
 
+    fun subtractEmission(emission: Double) {
+        var partial = binding.tvPartialResult.text.toString().toDouble()
+        partial -= emission
+        binding.tvPartialResult.text = partial.toString()
+    }
+
     fun divideEmission(peopleQtt: Int) {
+        var partial = binding.tvPartialResult.text.toString().toDouble()
+        partial /= peopleQtt
+        binding.tvPartialResult.text = partial.toString()
+    }
+
+    fun multiplyEmission(peopleQtt: Int) {
         var partial = binding.tvPartialResult.text.toString().toDouble()
         partial /= peopleQtt
         binding.tvPartialResult.text = partial.toString()

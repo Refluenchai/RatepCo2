@@ -28,14 +28,14 @@ class GroundTransportationViewModel @Inject constructor(
     }
 
     fun getMotorBikeCarbonEquivalent(distance: Double, type: String) = viewModelScope.launch {
-        carCarbonRepository.getCarCarbon(distance, type) { carCarbonEquivalent ->
-            carCarbonEquivalentLiveData.value = carCarbonEquivalent.toDouble()
+        motorBikeCarbonRepository.getMotorBikeCarbon(distance, type) { motorBikeCarbonEquivalent ->
+            motorBikeCarbonEquivalentLiveData.value = motorBikeCarbonEquivalent.toDouble()
         }
     }
 
     fun getPublicTransitCarbonEquivalent(distance: Double, type: String) = viewModelScope.launch {
-        carCarbonRepository.getCarCarbon(distance, type) { carCarbonEquivalent ->
-            carCarbonEquivalentLiveData.value = carCarbonEquivalent.toDouble()
+        publicTransitRepository.getPublicTransitCarbon(distance, type) { publicTransitCarbonEquivalent ->
+            publicTransitCarbonEquivalentLiveData.value = publicTransitCarbonEquivalent.toDouble()
         }
     }
 }

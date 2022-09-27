@@ -14,7 +14,9 @@ import com.example.ratepco2.domain.model.Vehicle
 import com.example.ratepco2.presentation.viewmodel.GroundTransportationViewModel
 import com.example.ratepco2.util.enumerator.TransportEnum.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GroundTransportationDialog : BottomSheetDialogFragment() {
 
     private lateinit var binding: DialogGroundTransportationBinding
@@ -85,7 +87,7 @@ class GroundTransportationDialog : BottomSheetDialogFragment() {
 
     private fun addTransportEvent() {
         binding.run {
-            when (incTransportType.spnItemMenu.selectedItem) {
+            when (incTransportType.spnItemMenu.selectedItemPosition) {
                 CAR.ordinal -> viewModel.getCarCarbonEquivalent(
                     incKmMonth.etItemText.text.toString().toDouble(), "MediumLPGCar"
                 )

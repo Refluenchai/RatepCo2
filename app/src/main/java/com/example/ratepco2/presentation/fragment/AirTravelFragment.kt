@@ -7,14 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ratepco2.R
 import com.example.ratepco2.databinding.FragmentAirTravelBinding
 import com.example.ratepco2.presentation.activity.MainActivity
+import com.example.ratepco2.presentation.viewmodel.AirTravelViewModel
+import com.example.ratepco2.presentation.viewmodel.HouseViewModel
+import com.example.ratepco2.util.ETWatcher
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AirTravelFragment : Fragment() {
 
+    private var flightEmission: Double = 0.0
     private lateinit var binding: FragmentAirTravelBinding
+    private val viewModel: AirTravelViewModel by viewModels()
     private lateinit var activity: MainActivity
 
     override fun onCreateView(
@@ -30,7 +38,29 @@ class AirTravelFragment : Fragment() {
         super.onResume()
         setActivityProps()
         setIncProps()
-        setNextEvent()
+        setEvents()
+        setObservers()
+    }
+
+    private fun setObservers() {
+        viewModel.flightCarbonEquivalentLiveData.observe(viewLifecycleOwner) { flightEmission ->
+            this.flightEmission = flightEmission
+            activity.addEmission(flightEmission)
+        }
+    }
+
+    private fun setEvents() {
+        binding.run {
+            fabNext.setOnClickListener { nextEvent() }
+            incKmMonth.etItemText.run {
+                addTextChangedListener(ETWatcher(this, viewModel) {
+                    activity.subtractEmission(flightEmission)
+                    (it as AirTravelViewModel).getFlightCarbonEquivalent(
+                        this.text.toString().toDouble(), "DomesticFlight"
+                    )
+                })
+            }
+        }
     }
 
     private fun setActivityProps() {
@@ -44,42 +74,18 @@ class AirTravelFragment : Fragment() {
 
     private fun setIncProps() {
         binding.run {
-            incDeparture.tvItemTitle.text = getString(R.string.air_travel_departure_title)
-            incDeparture.etItemText.visibility = View.GONE
-            incDeparture.spnItemMenu.adapter = ArrayAdapter(
-                this@AirTravelFragment.requireContext(),
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
-            )
-
-            incArrival.tvItemTitle.text = getString(R.string.air_travel_arrival_title)
-            incArrival.etItemText.visibility = View.GONE
-            incArrival.spnItemMenu.adapter = ArrayAdapter(
-                this@AirTravelFragment.requireContext(),
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
-            )
-
-            incTypeOfTrip.tvItemTitle.text = getString(R.string.air_travel_type_of_trip_title)
-            incTypeOfTrip.etItemText.visibility = View.GONE
-            incTypeOfTrip.spnItemMenu.adapter = ArrayAdapter(
-                this@AirTravelFragment.requireContext(),
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                resources.getStringArray(R.array.type_of_trip)
-            )
-
-            incNumberOfTrips.tvItemTitle.text = getString(R.string.air_travel_number_of_trips_title)
-            incNumberOfTrips.spnItemMenu.visibility = View.GONE
-            incNumberOfTrips.etItemText.gravity = Gravity.CENTER or Gravity.START
-            incNumberOfTrips.etItemText.setText("0")
+            incKmMonth.run {
+                tvItemTitle.text = getString(R.string.item_menu_with_text_total_km_month)
+                spnItemMenu.visibility = View.GONE
+                etItemText.gravity = Gravity.CENTER or Gravity.START
+                etItemText.hint = getString(R.string.item_menu_with_text_total_km_month)
+            }
         }
     }
-
-    private fun setNextEvent() = binding.fabNext.setOnClickListener { nextEvent() }
 
     private fun nextEvent() = goToDiet()
 
     private fun goToDiet() = findNavController().navigate(
-        AirTravelFragmentDirections.actionAirTravelFragmentToDietFragment()
+        AirTravelFragmentDirections.actionAirTravelFragmentToResultFragment()
     )
 }
