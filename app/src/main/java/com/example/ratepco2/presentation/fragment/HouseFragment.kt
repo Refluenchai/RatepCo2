@@ -114,9 +114,11 @@ class HouseFragment : Fragment(), AdapterView.OnItemSelectedListener {
     )
 
     override fun onItemSelected(parent: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
-        activity.multiplyEmission(this.peopleQtt)
-        this.peopleQtt = parent?.getItemAtPosition(position).toString().toInt()
-        activity.divideEmission(this.peopleQtt)
+        if (this.peopleQtt != 0) {
+            activity.multiplyEmission(this.peopleQtt)
+            this.peopleQtt = parent?.getItemAtPosition(position).toString().toInt()
+            activity.divideEmission(this.peopleQtt)
+        }
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {

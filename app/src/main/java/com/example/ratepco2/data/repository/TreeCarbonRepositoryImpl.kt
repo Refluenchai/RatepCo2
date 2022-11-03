@@ -17,7 +17,7 @@ class TreeCarbonRepositoryImpl @Inject constructor(): TreeCarbonRepository {
             .enqueue(object : Callback, retrofit2.Callback<TreeBody> {
                 override fun onResponse(call: Call<TreeBody>, response: Response<TreeBody>) {
                     response.body()?.let { treesResponse ->
-                        val modification = (treesResponse.numberOfTrees + 1) * 3
+                        val modification = (treesResponse.numberOfTrees + 1)
                         treesCallback(modification.toString())
                     }
                 }
